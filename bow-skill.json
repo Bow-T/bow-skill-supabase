@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Bow-T/bow-agent/main/schema/bow-skill.schema.json",
+  "id": "supabase",
+  "label": "Supabase",
+  "version": "1.0.0",
+  "description": "Bộ skill cho công nghệ Supabase (Postgres, RLS, migration, edge function, Auth, Storage) — không gắn với framework nào, ghép được với Flutter / Next.js / React Native. Gồm 2 skill chính thức của Supabase (xem THIRD_PARTY.md) + 2 skill quy ước của team Bow.",
+  "maintainer": "bow-agent",
+  "skillsDir": "skills",
+  "targets": {
+    "detect": [
+      { "file": "supabase/config.toml" },
+      { "file": "pubspec.yaml", "contains": "supabase_flutter" },
+      { "file": "package.json", "contains": "\"@supabase/supabase-js\"" },
+      { "file": "package.json", "contains": "\"@supabase/ssr\"" }
+    ]
+  },
+  "skills": [
+    "supabase",
+    "supabase-migration",
+    "supabase-postgres-best-practices",
+    "supabase-security-review"
+  ]
+}
